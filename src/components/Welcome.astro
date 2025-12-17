@@ -1,10 +1,27 @@
 ---
+import { client } from '../lib/sanity'
+import type { HomepageContent } from '../lib/sanity'
 
+// Fetch homepage content from Sanity
+const content = await client.fetch<HomepageContent>(`
+  *[_type == "homepage"][0] {
+    introText,
+    currentEmployer,
+    employerUrl
+  }
+`)
+
+// Fallback content if Sanity isn't set up yet
+const introText = content?.introText || "Kyle Fraser is a graphic designer and illustrator based in Glasgow, Scotland."
+const employer = content?.currentEmployer || "VisitScotland"
+const employerUrl = content?.employerUrl || "https://www.visitscotland.com"
 ---
+
 <main id="container" class="grid">
 			<div class="profile">
 			<h1>
-				Kyle Fraser is a graphic designer and illustrator based in Glasgow, Scotland. He currently works in-house across marketing, brand, and product design at <a href="www.visitscotland.com">VisitScotland</a>.
+				{introText} 
+				<a href={employerUrl}>{employer}</a>.
 			</h1>
 		</div>
 </main>
