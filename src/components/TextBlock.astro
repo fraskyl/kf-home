@@ -1,6 +1,7 @@
 ---
 import { client } from '../lib/sanity'
 import type { HomepageContent } from '../lib/sanity'
+import MediaWindow from './MediaWindow.astro'
 
 // Fetch homepage content from Sanity
 const content = await client.fetch<HomepageContent>(`
@@ -18,7 +19,7 @@ const employerUrl = content?.employerUrl || "https://www.visitscotland.com"
 ---
 
 <main id="container" class="grid">
-			<div class="profile">
+		<div class="profile">
 			<h1>
 				{introText} 
 				<a href={employerUrl}>{employer}</a>.
