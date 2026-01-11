@@ -6,11 +6,10 @@
 
 <style>
   .media__window {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-
+    position: absolute;
     width: 220px;
+    left: 8%;
+    top:70%;
     height: 123.75px;
     background-color: #969393;
     border-radius: 0.5rem;
@@ -27,9 +26,24 @@
   }
 
   .media__window.is-dragging {
+    position: absolute;
     transform: scale(1.06) rotate(1deg);
   }
+
+  @media screen (min-width: 1024px){
+ .media__window {
+    position: absolute;
+    width: 220px;
+    left: 70%;
+    top: 50%;
+  }
+
+  
+
 </style>
+
+
+
 
 <script>
   const mediaWindow = document.getElementById("media__window-drag");

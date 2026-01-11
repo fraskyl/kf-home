@@ -6,16 +6,21 @@ import MediaWindow from '../components/MediaWindow.astro';
 ---
 
 <Layout>
+	<div class="container" >
 	<TextBlock />
-	<div id="media-window">
-			<MediaWindow />
-		</div>
+	<MediaWindow />
+	</div>
+
 </Layout>
 
 
 <style>
-#media-window {
+	.container {
+	display:flex;
+	flex-direction: column;
+
 	position: relative;
-	margin-top: 2rem;
-}
+
+	}
+
 </style>
