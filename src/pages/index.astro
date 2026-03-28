@@ -1,26 +1,21 @@
 ---
-import TextBlock from '../components/TextBlock.astro';
-import Layout from '../layouts/Layout.astro';
-import MediaWindow from '../components/MediaWindow.astro';
-
+import TextBlock from "../components/TextBlock.astro";
+import Layout from "../layouts/Layout.astro";
+import MediaWindow from "../components/MediaWindow.astro";
 ---
 
 <Layout>
-	<div class="container" >
-	<TextBlock />
-	<MediaWindow />
-	</div>
-
+  <div class="container">
+    <TextBlock />
+    <!-- <MediaWindow /> -->
+  </div>
 </Layout>
 
-
 <style>
-	.container {
-	display:flex;
-	flex-direction: column;
+  .container {
+    display: flex;
+    flex-direction: column;
 
-	position: relative;
-
-	}
-
+    position: relative;
+  }
 </style>
